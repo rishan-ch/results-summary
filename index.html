@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Results summary component</title>
+  <style>
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Hanken Grotesk', sans-serif;
+      margin: auto;
+      height: 100vh;
+    }
+
+
+    /*Main contaienr*/
+    .result_container{
+      box-sizing: border-box;
+      display: flex;
+      /* position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%); */
+      height: 400px;
+      width: 600px;
+      border-radius: 30px;
+      box-shadow: 10px 10px 10px  rgb(197, 197, 197);
+    }
+
+    /*Overall result / right part*/
+    .overall_result{
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 20px 40px;
+      border-radius: 30px;
+      width: 50%;
+      background-image: linear-gradient(hsl(252, 100%, 67%),hsl(241, 81%, 54%));
+    }
+    .overall_score_container{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: border-box;
+      background-image: linear-gradient(hsla(256, 72%, 46%, 1),hsla(241, 72%, 46%, 0));
+      border-radius: 100%;
+      height: 10rem;
+      width: 10rem;
+    }
+    .overall_score{
+      font-size: 60px;
+      margin: 0px;
+      font-weight: 800;
+    }
+    
+    h4{
+      font-weight: 500;
+    }
+    h2{
+      font-weight: 100;
+    }
+    p{
+      font-size: 18px;
+      opacity: .7;
+    }
+
+    /*Summary part*/
+    .summary{
+      box-sizing: border-box;
+      width: 50%;
+      padding: 25px;
+    }
+    .summary_elements{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+    .Reaction{
+      background-color:hsl(0, 100%, 67%,15%);
+    }
+    .Memory{
+      background-color:hsl(39, 100%, 56%,15%);
+    }
+    .Verbal{
+      background-color:hsl(166, 100%, 37%,15%);
+    }
+    .Visual{
+      background-color:hsl(234, 85%, 45%,15%);
+    }
+    .category_logo{
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .category_title{
+      display: flex;
+
+    }
+    .category_title p{
+      margin: 0px;
+    }
+    .submit{
+      color: white;
+      background-color: hsl(224, 30%, 27%);
+      margin-top: 30px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .submit:hover{
+      background-color: hsl(234, 85%, 45%);
+    }
+    .submit p{
+      margin: 0px;
+    }
+
+
+    @media screen and (max-width:375px) {
+      body{
+        display: block;
+      }
+      .result_container{
+        flex-direction: column;
+        width: 375px;
+      }
+      .overall_result{
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        width: 100%;
+      }
+      .summary{
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="result_container">
+      <div class="overall_result">
+        <h4>Your result</h3>
+        <div class="overall_score_container">
+          <span class="overall_score">76</span>
+          <p style="margin: 0px;">of 100</p>
+        </div>
+        <div class="remark">
+          <h2>Great</h2>
+        </div>
+        <p style="font-size: 15px;">You scored higher than 65% of the people who have taken these test</p>
+      </div>
+
+      <div class="summary">
+        <h3>Summary</h3>
+        <div class="Reaction summary_elements">
+          <div class="category_title">
+            <img src="./assets/images/icon-reaction.svg" alt="" class="category_logo">
+            <p>Reaction</p>
+          </div>
+          <div class="obtained_result">
+            <span class="obtained_marks">80</span>
+            <span class="fullmarks">/100</span>
+          </div>
+        </div>
+
+        <div class="Memory summary_elements">
+          <div class="category_title">
+            <img src="./assets/images/icon-memory.svg" alt="" class="category_logo">
+            <p>Memory</p>
+          </div>
+          <div class="obtained_result">
+            <span class="obtained_marks">92</span>
+            <span class="fullmarks">/100</span>
+          </div>
+        </div>
+
+        <div class="Verbal summary_elements">
+          <div class="category_title">
+            <img src="./assets/images/icon-verbal.svg" alt="" class="category_logo">
+            <p>Verbal</p>
+          </div>
+          <div class="obtained_result">
+            <span class="obtained_marks">61</span>
+            <span class="fullmarks">/100</span>
+          </div>
+        </div>
+
+        <div class="Visual summary_elements">
+          <div class="category_title">
+            <img src="./assets/images/icon-visual.svg" alt="" class="category_logo">
+            <p>Visual</p>
+          </div>
+          <div class="obtained_result">
+            <span class="obtained_marks">72</span>
+            <span class="fullmarks">/100</span>
+          </div>
+        </div>
+
+        <div class="submit summary_elements">
+          <p>Continue</p>
+        </div>
+      </div>
+      
+    </div>
+</body>
+</html>
